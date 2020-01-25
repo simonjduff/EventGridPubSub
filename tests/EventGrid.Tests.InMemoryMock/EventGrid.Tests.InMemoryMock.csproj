@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\EventGridPubSub.InMemoryMock\EventGridPubSub.InMemoryMock.csproj" />
     <ProjectReference Include="..\..\src\EventGridPubSub.Publisher\EventGridPubSub.Publisher.csproj" />
+    <ProjectReference Include="..\..\src\EventGridPubSub.Types\EventGridPubSub.Types.csproj" />
   </ItemGroup>
 
 </Project>

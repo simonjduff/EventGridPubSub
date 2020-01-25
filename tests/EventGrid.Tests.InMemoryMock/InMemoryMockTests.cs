@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using EventGridPubSub.Publisher;
-using Microsoft.Azure.EventGrid.Models;
+using EventGridPubSub.InMemoryMock;
+using EventGridPubSub.Types;
 using Xunit;
 
 namespace EventGrid.Tests.InMemoryMock
@@ -13,7 +12,13 @@ namespace EventGrid.Tests.InMemoryMock
         public async Task Published_message_can_be_retrieved()
         {
             // Given a test message
-            var message = new TestMessage(Guid.NewGuid().ToString());
+            var message = new TestMessage(Guid.NewGuid().ToString(), 
+                "Published_message_can_be_retrieved", 
+                "0.0.1",
+                new TestMessage.TestMessagePayload
+                {
+                    Value = "TestValue"
+                });
 
             // and an in memory pub sub publisher
             InMemoryEventGridPublisher<TestMessage> publisher = new InMemoryEventGridPublisher<TestMessage>();
@@ -32,35 +37,22 @@ namespace EventGrid.Tests.InMemoryMock
             // Then the message can be retrieved
             Assert.NotNull(retrievedMessage);
             Assert.Equal(message.Id, retrievedMessage.Id);
+            Assert.Equal("TestValue", ((TestMessage.TestMessagePayload)retrievedMessage.Data).Value);
         }
 
-        public class TestMessage : EventGridEvent
+        public class TestMessage : PubSubMessage
         {
-            public TestMessage(string id)
+            public TestMessage(string id, 
+                string subject, 
+                MessageVersion version, 
+                TestMessagePayload payload) : base(id, subject, version, payload)
             {
-                Id = id;
-            }
-        }
-    }
-
-    public class InMemoryEventGridPublisher<T> : IEventGridPublisher<T>
-    where T : EventGridEvent
-    {
-        private readonly List<Action<T>> _callbacks = new List<Action<T>>();
-
-        public void Subscribe(Action<T> callback)
-        {
-            _callbacks.Add(callback);
-        }
-
-        public Task PublishAsync(T message)
-        {
-            foreach (var callback in _callbacks)
-            {
-                callback(message);
             }
 
-            return Task.CompletedTask;
+            public class TestMessagePayload
+            {
+                public string Value { get; set; }
+            }
         }
     }
 }

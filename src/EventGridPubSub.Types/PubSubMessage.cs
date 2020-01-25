@@ -3,13 +3,12 @@ using Microsoft.Azure.EventGrid.Models;
 
 namespace EventGridPubSub.Types
 {
-    public class PubSubMessage<T> : EventGridEvent
-    where T : class
+    public abstract class PubSubMessage : EventGridEvent
     {
-        public PubSubMessage(string id,
+        protected PubSubMessage(string id,
             string subject,
             MessageVersion version,
-            T payload)
+            object payload)
         {
             Id = id;
             EventTime = DateTime.UtcNow;
