@@ -2,7 +2,7 @@
 
 namespace EventGridPubSub.Tester
 {
-    public class Class1
+    public class PubSubTester
     {
     }
 }

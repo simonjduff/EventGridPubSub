@@ -1,25 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B21BA716-8767-40F0-8BE5-5F33AC9762B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGridPubSub.Publisher", "src\EventGridPubSub.Publisher\EventGridPubSub.Publisher.csproj", "{541E92F7-E11F-4296-B900-D2724C664D4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGridPubSub.Publisher", "src\EventGridPubSub.Publisher\EventGridPubSub.Publisher.csproj", "{541E92F7-E11F-4296-B900-D2724C664D4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGridPubSub.Subscriber", "src\EventGridPubSub.Subscriber\EventGridPubSub.Subscriber.csproj", "{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGridPubSub.Tester", "src\EventGridPubSub.Tester\EventGridPubSub.Tester.csproj", "{91DD1AFE-A146-4611-8712-18CAC4E768ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGridPubSub.Tester", "src\EventGridPubSub.Tester\EventGridPubSub.Tester.csproj", "{91DD1AFE-A146-4611-8712-18CAC4E768ED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGridPubSub.InMemoryMock", "src\EventGridPubSub.InMemoryMock\EventGridPubSub.InMemoryMock.csproj", "{32ED02D6-D0E2-4D6B-9727-333FA381D41F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGridPubSub.InMemoryMock", "src\EventGridPubSub.InMemoryMock\EventGridPubSub.InMemoryMock.csproj", "{32ED02D6-D0E2-4D6B-9727-333FA381D41F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CF93DA10-8D17-40D4-9B35-38434E498B1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGrid.Tests.Publisher", "tests\EventGrid.Tests.Publisher\EventGrid.Tests.Publisher.csproj", "{03652A46-846D-4453-A0C6-80F631A8AD03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGrid.Tests.Publisher", "tests\EventGrid.Tests.Publisher\EventGrid.Tests.Publisher.csproj", "{03652A46-846D-4453-A0C6-80F631A8AD03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGrid.Tests.Subscriber", "tests\EventGrid.Tests.Subscriber\EventGrid.Tests.Subscriber.csproj", "{A4213E5C-C017-4BB9-A6A6-A9E99371111D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGrid.Tests.Subscriber", "tests\EventGrid.Tests.Subscriber\EventGrid.Tests.Subscriber.csproj", "{A4213E5C-C017-4BB9-A6A6-A9E99371111D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventGrid.Tests.InMemoryMock", "tests\EventGrid.Tests.InMemoryMock\EventGrid.Tests.InMemoryMock.csproj", "{300EDE35-09B1-4EA6-9B00-8D5BD66F5531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGrid.Tests.InMemoryMock", "tests\EventGrid.Tests.InMemoryMock\EventGrid.Tests.InMemoryMock.csproj", "{300EDE35-09B1-4EA6-9B00-8D5BD66F5531}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGridPubSub.Types", "src\EventGridPubSub.Types\EventGridPubSub.Types.csproj", "{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3110BDD8-2BA2-4A29-BECB-B21D4F0F5FFB}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,9 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{541E92F7-E11F-4296-B900-D2724C664D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -46,18 +49,6 @@ Global
 		{541E92F7-E11F-4296-B900-D2724C664D4E}.Release|x64.Build.0 = Release|Any CPU
 		{541E92F7-E11F-4296-B900-D2724C664D4E}.Release|x86.ActiveCfg = Release|Any CPU
 		{541E92F7-E11F-4296-B900-D2724C664D4E}.Release|x86.Build.0 = Release|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Debug|x64.Build.0 = Debug|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Debug|x86.Build.0 = Debug|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Release|x64.ActiveCfg = Release|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Release|x64.Build.0 = Release|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Release|x86.ActiveCfg = Release|Any CPU
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02}.Release|x86.Build.0 = Release|Any CPU
 		{91DD1AFE-A146-4611-8712-18CAC4E768ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{91DD1AFE-A146-4611-8712-18CAC4E768ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91DD1AFE-A146-4611-8712-18CAC4E768ED}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -118,14 +109,32 @@ Global
 		{300EDE35-09B1-4EA6-9B00-8D5BD66F5531}.Release|x64.Build.0 = Release|Any CPU
 		{300EDE35-09B1-4EA6-9B00-8D5BD66F5531}.Release|x86.ActiveCfg = Release|Any CPU
 		{300EDE35-09B1-4EA6-9B00-8D5BD66F5531}.Release|x86.Build.0 = Release|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Debug|x64.Build.0 = Debug|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Debug|x86.Build.0 = Debug|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Release|x64.ActiveCfg = Release|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Release|x64.Build.0 = Release|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Release|x86.ActiveCfg = Release|Any CPU
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{541E92F7-E11F-4296-B900-D2724C664D4E} = {B21BA716-8767-40F0-8BE5-5F33AC9762B4}
-		{9A9FDF87-DEF7-4A0A-9543-2B604DFCAF02} = {B21BA716-8767-40F0-8BE5-5F33AC9762B4}
 		{91DD1AFE-A146-4611-8712-18CAC4E768ED} = {B21BA716-8767-40F0-8BE5-5F33AC9762B4}
 		{32ED02D6-D0E2-4D6B-9727-333FA381D41F} = {B21BA716-8767-40F0-8BE5-5F33AC9762B4}
 		{03652A46-846D-4453-A0C6-80F631A8AD03} = {CF93DA10-8D17-40D4-9B35-38434E498B1B}
 		{A4213E5C-C017-4BB9-A6A6-A9E99371111D} = {CF93DA10-8D17-40D4-9B35-38434E498B1B}
 		{300EDE35-09B1-4EA6-9B00-8D5BD66F5531} = {CF93DA10-8D17-40D4-9B35-38434E498B1B}
+		{C19DD1DD-1AFF-4F27-B45A-1F84411C6FE9} = {B21BA716-8767-40F0-8BE5-5F33AC9762B4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD48C091-8EC8-444D-946B-ED0E5BE85EAB}
 	EndGlobalSection
 EndGlobal

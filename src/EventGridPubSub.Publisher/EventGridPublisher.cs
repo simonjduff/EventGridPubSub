@@ -2,7 +2,7 @@
 
 namespace EventGridPubSub.Publisher
 {
-    public class Class1
+    public class EventGridPublisher
     {
     }
 }
