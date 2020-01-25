@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using EventGridPubSub.Publisher;
 using EventGridPubSub.Types;
 using Microsoft.Azure.EventGrid.Models;
 using Xunit;
@@ -55,11 +56,5 @@ namespace EventGrid.Tests.Publisher
         {
             throw new System.NotImplementedException();
         }
-    }
-
-    public interface IEventGridPublisher<T>
-    where T : EventGridEvent
-    {
-        Task PublishAsync(T message);
     }
 }

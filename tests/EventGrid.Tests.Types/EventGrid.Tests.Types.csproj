@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EventGridPubSub.Tester\EventGridPubSub.Tester.csproj" />
+    <ProjectReference Include="..\..\src\EventGridPubSub.Types\EventGridPubSub.Types.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 
 namespace EventGridPubSub.InMemoryMock
 {
-    public class Class1
+    public class PubSubInMemory
     {
     }
 }
