@@ -10,6 +10,12 @@ namespace EventGridPubSub.Types
             MessageVersion version,
             object payload)
         {
+            // ReSharper disable once JoinNullCheckWithUsage
+            if (payload == null)
+            {
+                throw new ArgumentNullException(nameof(payload));
+            }
+
             Id = id;
             EventTime = DateTime.UtcNow;
             EventType = this.GetType().Name;

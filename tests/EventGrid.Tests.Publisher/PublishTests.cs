@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 using EventGridPubSub.Publisher;
 using EventGridPubSub.Types;
-using Microsoft.Azure.EventGrid.Models;
 using Xunit;
 
 namespace EventGrid.Tests.Publisher
@@ -13,9 +12,9 @@ namespace EventGrid.Tests.Publisher
         public async Task Publisher_can_publish_event()
         {
             // Given a publisher
-            const string topic = "EventGridPubSubTopic";
-            const string region = "https://eventgridpsubsubtopic.westeurope-1.eventgrid.azure.net/api/events";
-            IEventGridPublisher<TestMessage> publisher = new EventGridPublisher<TestMessage>(topic, region);
+            Topic topic = "eventgridpubsubtesttopic";
+            Region region = "northeurope";
+            IEventGridPublisher<TestMessage> publisher = new EventGridPublisher<TestMessage>(topic, region, "hR/7WV5IC4EorEorOll5CeXHUD6Kk2nnR72kVpDjlk4=");
 
             // And a message
             var message = new TestMessage();
@@ -27,34 +26,13 @@ namespace EventGrid.Tests.Publisher
         }
     }
 
-    public class TestMessage : EventGridEvent
+    public class TestMessage : PubSubMessage
     {
-        public TestMessage()
+        public TestMessage() : base(Guid.NewGuid().ToString(),
+            "Publisher_can_publish_event",
+            "0.0.1",
+            new object())
         {
-            EventTime = DateTime.UtcNow;
-            EventType = nameof(TestMessage);
-            Id = Guid.NewGuid().ToString();
-            Data = null;
-            Subject = "Publisher_can_publish_event";
-            DataVersion = "0.0.1";
-        }
-    }
-
-    public class EventGridPublisher<T> : IEventGridPublisher<T>
-    where T : EventGridEvent
-    {
-        public EventGridPublisher(Topic topic, Region region) : this($"https://{topic}.{region}-1.eventgrid.azure.net/api/events")
-        {
-        }
-
-        public EventGridPublisher(string endpoint)
-        {
-            
-        }
-
-        public Task PublishAsync(T message)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

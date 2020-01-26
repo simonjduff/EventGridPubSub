@@ -1,0 +1,17 @@
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "eventGridEvent",
+      "direction": "in"
+    },
+    {
+      "tableName": "Events",
+      "connection": "AzureWebJobsStorage",
+      "name": "tableBinding",
+      "type": "table",
+      "direction": "out"
+    }
+  ]
+}
+

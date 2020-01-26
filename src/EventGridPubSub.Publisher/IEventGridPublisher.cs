@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using Microsoft.Azure.EventGrid.Models;
+using EventGridPubSub.Types;
 
 namespace EventGridPubSub.Publisher
 {
     public interface IEventGridPublisher<in T>
-        where T : EventGridEvent
+        where T : PubSubMessage
     {
         Task PublishAsync(T message);
     }
