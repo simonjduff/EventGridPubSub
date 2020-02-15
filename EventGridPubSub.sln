@@ -19,6 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGridPubSub.Types", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3110BDD8-2BA2-4A29-BECB-B21D4F0F5FFB}"
 	ProjectSection(SolutionItems) = preProject
+		deploy.ps1 = deploy.ps1
 		LICENSE.md = LICENSE.md
 		README.md = README.md
 	EndProjectSection
