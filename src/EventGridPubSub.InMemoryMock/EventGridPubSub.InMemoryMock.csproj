@@ -5,8 +5,20 @@
     <ProjectReference Include="..\EventGridPubSub.Publisher\EventGridPubSub.Publisher.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Simon J Duff</Authors>
+    <Description>In memory implementation of the EventGridPubSub publisher, to be used for testing</Description>
+    <Copyright>Simon J Duff 2020</Copyright>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/simonjduff/EventGridPubSub</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
